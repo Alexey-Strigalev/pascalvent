@@ -1,0 +1,181 @@
+.modal-window__overlay {
+  position: fixed;
+  z-index: 55;
+  top: 0;
+  left: -150%;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(217, 250, 221, 0.55);
+  backdrop-filter: blur(10px);
+  transition: .7s all;
+}
+
+.modal-window {
+  transition: .7s all;
+
+  .modal-window__feedback {
+    width: 412px;
+  }
+
+  position: fixed;
+  z-index: 55;
+  top: 50%;
+  left: 50%;
+  transform: translate(250%, -50%);
+  padding-top: 35px;
+  width: 445px;
+  background-color: #D9FADD;
+  box-shadow: 0px 0px 10px rgba(73, 93, 76, 0.2);
+  border-radius: 50px;
+  @media(max-width:500px) {
+    width: 290px;
+  }
+
+  &__title {
+    position: relative;
+    margin-left: 35px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    line-height: 55px;
+    text-transform: capitalize;
+
+    @media(max-width:500px) {
+      font-size: 32px;
+      line-height: 44px;
+      margin-left: 20px;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      width: 130px;
+      right: 88px;
+      bottom: 23px;
+      background-color: #78C081;
+      border-radius: 1.5px;
+      @media(max-width:500px) {
+        display: none;
+      }
+    }
+  }
+
+  &__content-wrapper {
+    padding: 35px;
+    background-color: #fff;
+    border-radius: 50px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    color: #7CA381;
+  }
+
+  &__schedule-title {
+    margin-bottom: 17px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #7CA381;
+  }
+
+  &__schedule-info{
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 37px;
+    font-weight: 600;
+    color: #7CA381;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 22px;
+      height: 22px;
+      top: 0;
+      left: 0;
+      background-image: url(../images/clock-icon.svg);
+    }
+  }
+
+  &__phone-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    @media(max-width:500px) {
+      flex-direction: column;
+      height: unset;
+      align-items: start;
+    }
+  }
+
+  &__phone-link {
+    position: relative;
+    padding-left: 37px;
+    font-weight: 600;
+    color: #7B897D;
+    transition: .3s all; 
+    &:hover {
+      color: #54E165;
+    }
+    &:first-child {
+      padding-right: 21px;
+      border-right: 1px solid #BEE1C2;
+      @media(max-width:500px) {
+        padding-right: 0;
+        padding-bottom: 15px;
+        border-right: none;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 22px;
+      height: 22px;
+      top: 0;
+      left: 0;
+      background-image: url(../images/phone-icon.png);
+    }
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+  }
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    margin-bottom: 20px;
+    padding: 10px;
+    height: 49px;
+    border: none;
+    box-shadow: 0px 0px 8px rgba(66, 83, 69, 0.14);
+    border-radius: 15px;
+
+    &::placeholder {
+      font-family: $Proxima;
+      font-weight: 400;
+      font-size: 14px;
+      color: #7CA381;
+    }
+  }
+
+  .button {
+    margin-left: 10px;
+    width: 355px;
+    @media(max-width:500px) {
+      width: 200px;
+    }
+    &::before {
+      width: 375px;
+      @media(max-width:500px) {
+        width: 220px;
+      }
+    }
+  }
+}
